@@ -3,6 +3,7 @@ import { Menu, X, ShoppingBag, Heart, Search, User } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLinksVisible, setIsLinksVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -21,26 +22,47 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container px-4">
+        <div className="flex items-center justify-center h-16">
+          {/* Desktop Menu Toggle Button */}
+          <button
+            className="hidden md:block ml-4"
+            onClick={() => setIsLinksVisible(!isLinksVisible)}
+          >
+            {isLinksVisible ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <div
+                className="
+                flex items-center space-x-2 w-[450px] text-primary"
+              >
+                <Menu className="h-6 w-6" />
+                <p className="ml-2">Menu</p>
+              </div>
+            )}
+          </button>
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="/#collections">Home</NavLink>
-            <NavLink href="/#collections">Shop</NavLink>
-            <NavLink href="/#about">Services</NavLink>
-            <NavLink href="/#sustainability">Sustainability</NavLink>
-            <NavLink href="/#about">Press</NavLink>
-            <NavLink href="/#contact">Contact</NavLink>
-          </div>
+          {/* Links Visibility */}
+          {isLinksVisible && (
+            <div className="hidden md:flex items-center space-x-8 w-[450px]">
+              <NavLink href="/#collections">Home</NavLink>
+              <NavLink href="/#collections">Shop</NavLink>
+              <NavLink href="/#about">Services</NavLink>
+              <NavLink href="/#sustainability">Sustainability</NavLink>
+              <NavLink href="/#about">Press</NavLink>
+              <NavLink href="/#contact">Contact</NavLink>
+            </div>
+          )}
 
           <a
             href="/"
-            className="text-2xl font-heading font-semibold text-primary"
+            className="text-2xl text-center font-heading font-semibold text-primary w-[450px]"
           >
             NATO
           </a>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-end space-x-4 w-[450px]">
             <button className="p-2 text-primary hover:text-black">
               <Search size={20} />
             </button>
