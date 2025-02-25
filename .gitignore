@@ -51,7 +51,6 @@ npm-debug.log
 pip-log.txt
 
 # Generated files
-dist/
 build/
 coverage/
 *.pid
