@@ -8,42 +8,42 @@ const Collections = () => {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/arwa-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Arwa",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 18,000",
     },
     {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/hanifa-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Hanifa",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 20,000",
     },
     {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/daila-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Dalia",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 30,000",
     },
     {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/huban-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Hunbun",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 35,000",
     },
     {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/amina-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Amina",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 25,000",
     },
     {
       image:
         "https://www.aulgahnato.com/wp-content/uploads/2024/02/gamala-01-600x716.jpg?auto=format&fit=crop&q=80",
       title: "Gamala",
-      productType: "Dress",
+      collection: "Elegance Ease",
       price: "KSHs. 18,500",
     },
   ];
@@ -77,8 +77,11 @@ const Collections = () => {
   };
 
   return (
-    <section id="latest-arrivals" className="py-20 relative overflow-hidden">
-      <div className="container py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-[radial-gradient(circle_at_center,_#f3e8e2_0%,_transparent_70%)]">
+    <section
+      id="collections"
+      className="py-20 relative overflow-hidden bg-[radial-gradient(circle_at_center,_#f3e8e2_0%,_transparent_70%)]"
+    >
+      <div className="container px-4 sm:px-6 lg:px-8 inset-0 ">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
             Latest <span className="gold-gradient">Arrivals</span>
@@ -104,7 +107,7 @@ const Collections = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity"></div>
               </div>
               <div className="mt-4 text-center">
-                <p className="gold-gradient">{collection.productType}</p>
+                <p className="gold-gradient">{collection.collection}</p>
                 <h3 className="text-xl font-semibold mb-2">
                   {collection.title}
                 </h3>

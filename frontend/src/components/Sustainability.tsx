@@ -1,8 +1,6 @@
-import React from "react";
-
 const Sustainability = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-nato">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -53,7 +51,7 @@ const Sustainability = () => {
           </div>
           <div className="relative">
             <img
-              src="https://www.aulgahnato.com/wp-content/uploads/2022/05/nato-home-about-01-763x1024.jpg?auto=format&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1618437542145-38e9015cf8f1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=80"
               alt="Sustainable fashion"
               className="w-full h-[600px] object-cover rounded-none object-top"
             />

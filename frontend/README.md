@@ -17,7 +17,7 @@ Follow these steps:
 git clone git@github.com:dev-gaitano/nato-fashion-house.git
 
 # Step 2: Navigate to the project directory.
-cd nato-fashion-house
+cd nato-fashion-house/frontend
 
 # Step 3: Install the necessary dependencies.
 npm i
