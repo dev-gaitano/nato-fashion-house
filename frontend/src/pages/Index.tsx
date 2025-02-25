@@ -8,8 +8,9 @@ import Awards from "@/components/Awards";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import Sustainability from "@/components/Sustainability";
-import OffersBar from "@/components/OffersBar";
+import NewsBar from "@/components/NewsBar";
 import { useState, useEffect } from "react";
+import Services from "@/components/Services";
 
 const Index = () => {
   useEffect(() => {
@@ -58,7 +59,7 @@ const Index = () => {
       <div className="flex flex-col">
         {isScrolled ? (
           <>
-            <OffersBar />
+            <NewsBar />
             <Navbar />
           </>
         ) : (
@@ -69,7 +70,8 @@ const Index = () => {
       <Values />
       <Collections />
       <Sustainability />
-      <About />
+      <Services />
+      {/* <About /> */}
       <Partners />
       <Testimonials />
       <Awards />

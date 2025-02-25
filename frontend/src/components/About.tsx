@@ -12,11 +12,11 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-square rounded-2xl overflow-hidden">
+            <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1582562124811-c09040d0a901"
-                alt="NATO Fashion House craftsmanship"
-                className="w-full h-full object-cover"
+                src="https://www.aulgahnato.com/wp-content/uploads/2022/05/nato-home-about-01-763x1024.jpg?auto=format&fit=crop&q=80"
+                alt="Sustainable fashion"
+                className="w-full h-[600px] object-cover rounded-none object-top"
               />
             </div>
             <div className="space-y-6">

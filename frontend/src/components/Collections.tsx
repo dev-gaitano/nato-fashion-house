@@ -55,7 +55,7 @@ const Collections = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -104,7 +104,7 @@ const Collections = () => {
                   alt={collection.title}
                   className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300 object-top"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-opacity"></div>
               </div>
               <div className="mt-4 text-center">
                 <p className="gold-gradient">{collection.collection}</p>
@@ -116,26 +116,6 @@ const Collections = () => {
             </div>
           ))}
         </Slider>
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {collections.map((collection, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative overflow-hidden">
-                <img
-                  src={collection.image}
-                  alt={collection.title}
-                  className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-opacity"></div>
-              </div>
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold mb-2">
-                  {collection.title}
-                </h3>
-                <p className="text-gray-600">{collection.price}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </section>
   );
