@@ -1,11 +1,9 @@
-import AboutImage from "/about-img-comp.jpeg";
-
 const About = () => {
   return (
     <section id="about" className="relative overflow-hidden p-4">
       <div className="relative">
         <img
-          src={AboutImage}
+          src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635328/about-img-comp_vpmpkb.jpg"
           alt="about-image-background"
           className="w-full h-full max-md:h-[52rem] object-cover object-center"
           loading="lazy"

@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/github-banner.png" alt="banner_img">
+    <img src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635329/github-banner_rs5sfj.png" alt="banner_img">
 </div>
 
 ## How can I edit this code?
