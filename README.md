@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/github-banner.png" alt="banner_img">
+    <img src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635329/github-banner_rs5sfj.png" alt="banner_img">
 </div>
 
 ## How can I edit this code?
@@ -12,10 +12,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone git@github.com:dev-gaitano/nato-frontend.git
+git clone https://github.com/dev-gaitano/nato-fashion-house.git
 
 # Step 2: Navigate to the project directory.
-cd nato-frontend/
+cd nato-fashion-house/
 
 # Step 3: Install the necessary dependencies.
 npm i

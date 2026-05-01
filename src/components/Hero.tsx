@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import ImageSlider from "./ImageSlider";
 
 const Hero = () => {
-  const images = ["/hero-img-0-comp.jpg", "/hero-img-1-comp.jpg"];
-
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const images = [
+    "https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635325/hero-img-1-comp_v2qg6o.jpg",
+    "https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635330/hero-img-0-comp_xw6c9w.jpg"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,19 +37,16 @@ const Hero = () => {
 
           {/* Overlays */}
           <div
-            className={`absolute inset-0 bg-black transition-opacity duration-700 ${
-              isScrolled ? "opacity-0" : "opacity-50"
-            }`}
+            className={`absolute inset-0 bg-black transition-opacity duration-700 ${isScrolled ? "opacity-0" : "opacity-50"
+              }`}
           />
           <div
-            className={`absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#f3e8e2_0%,_transparent_40%)] transition-opacity duration-700 ${
-              isScrolled ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#f3e8e2_0%,_transparent_40%)] transition-opacity duration-700 ${isScrolled ? "opacity-0" : "opacity-100"
+              }`}
           />
           <div
-            className={`absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#d2bab0_0%,_transparent_40%)] transition-opacity duration-700 ${
-              isScrolled ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#d2bab0_0%,_transparent_40%)] transition-opacity duration-700 ${isScrolled ? "opacity-0" : "opacity-100"
+              }`}
           />
         </div>
         <div className="container mx-auto px-4 h-screen-minus-20 relative">

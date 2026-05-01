@@ -45,24 +45,21 @@ const Footer = () => {
           onClick={() => setIsOpen(!isOpen)}
         >
           <h3
-            className={`font-bold transition-all duration-500 ${
-              isOpen ? "text-gray-300" : "text-gray-600"
-            }`}
+            className={`font-bold transition-all duration-500 ${isOpen ? "text-gray-300" : "text-gray-600"
+              }`}
           >
             {title}
           </h3>
           <FaChevronDown
-            className={`transition-transform duration-300 ${
-              isOpen ? "rotate-180" : "rotate-0"
-            }`}
+            className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"
+              }`}
           />
         </div>
 
         {/* Links */}
         <div
-          className={`flex flex-col gold-gradient overflow-hidden transition-all duration-500 ease-in-out ${
-            isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-          } md:max-h-none md:opacity-100`}
+          className={`flex flex-col gold-gradient overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+            } md:max-h-none md:opacity-100`}
         >
           {links.map((link, index) => (
             <a key={index} href={link.href}>
@@ -210,7 +207,7 @@ const Footer = () => {
         </div>
         <div className="w-full flex justify-center">
           <img
-            src="https://www.aulgahnato.com/wp-content/uploads/2021/01/nato-logo.png"
+            src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635330/nato-logo-full_moycdt.png"
             alt="logo-image"
             className="w-[800px]"
           />
