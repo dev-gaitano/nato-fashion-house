@@ -1,16 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Collections from "@/components/Collections";
-import Values from "@/components/Values";
 import About from "@/components/About";
-import Partners from "@/components/Partners";
-import Awards from "@/components/Awards";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import Sustainability from "@/components/Sustainability";
 import NewsBar from "@/components/NewsBar";
 import { useState, useEffect } from "react";
-import Services from "@/components/Services";
 
 const Index = () => {
   useEffect(() => {
