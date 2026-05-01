@@ -62,3 +62,4 @@ dist-ssr
 # Secret keys and credentials
 config/settings_local.py
 secrets.json
+.vercel
