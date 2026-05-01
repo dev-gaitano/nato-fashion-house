@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ShoppingBag, Heart, Search, User } from "lucide-react";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,28 +16,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/80 backdrop-blur-md shadow-sm mt-8"
-        : "bg-transparent"
-        }`}
-    >
-      <div className="container px-4">
-        <div className="flex items-center justify-center h-16">
+    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
+      <div className="container">
+        <div className="navbar-inner">
           {/* Desktop Menu Toggle Button */}
           <button
-            className="hidden md:block ml-4"
+            className="menu-toggle-btn"
             onClick={() => setIsLinksVisible(!isLinksVisible)}
           >
             {isLinksVisible ? (
-              <X className="h-6 w-6" />
+              <X className="icon-6" />
             ) : (
-              <div
-                className="
-                flex items-center space-x-2 w-[450px] text-primary"
-              >
-                <Menu className="h-6 w-6" />
-                <p className="ml-2">Menu</p>
+              <div className="menu-toggle-content">
+                <Menu className="icon-6" />
+                <p>Menu</p>
               </div>
             )}
           </button>
@@ -44,7 +37,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           {/* Links Visibility */}
           {isLinksVisible && (
-            <div className="hidden md:flex items-center space-x-8 w-[450px]">
+            <div className="nav-links-desktop">
               <NavLink href="/#collections">Home</NavLink>
               <NavLink href="/#collections">Shop</NavLink>
               <NavLink href="/#about">Services</NavLink>
@@ -54,49 +47,46 @@ const Navbar = () => {
             </div>
           )}
 
-          <a href="/" className="flex w-[450px]">
+          <a href="/" className="nav-logo-link">
             <img
               src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635330/nato-logo-full_moycdt.png"
               alt="logo-image"
-              className={`w-24 transition-all justify-center duration-500 ease-in-out ${isScrolled
-                ? "md:scale-100 translate-y-0 max-md:justify-start mx-auto max-md:mx-2 "
-                : "translate-y-96 max-md:translate-y-40 scale-[8] max-md:scale-[3] max-md:translate-x-[6rem] mx-auto"
-                }`}
+              className={`nav-logo ${isScrolled ? "nav-logo-scrolled" : "nav-logo-initial"}`}
             />
           </a>
 
-          <div className="flex items-center justify-end space-x-4 max-md:space-x-2 w-[450px]">
-            <button className="p-2 text-primary hover:text-black">
+          <div className="nav-actions">
+            <button className="nav-action-btn">
               <Search size={20} />
             </button>
-            <button className="max-md:hidden p-2 text-primary hover:text-black">
+            <button className="nav-action-btn nav-action-btn-desktop">
               <User size={20} />
             </button>
-            <button className="max-md:hidden p-2 text-primary hover:text-black">
+            <button className="nav-action-btn nav-action-btn-desktop">
               <Heart size={20} />
             </button>
-            <button className="p-2 text-primary hover:text-black">
+            <button className="nav-action-btn">
               <ShoppingBag size={20} />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6 mx-2" />
+              <X className="icon-6" />
             ) : (
-              <Menu className="h-6 w-6 mx-2 text-primary hover:text-foreground transition-colors duration-300 ease-in-out" />
+              <Menu className="icon-6" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-t">
-            <div className="flex flex-col items-center space-y-4 p-4">
+          <div className="mobile-menu">
+            <div className="mobile-menu-inner">
               <MobileNavLink
                 href="/#collections"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -160,10 +150,7 @@ const NavLink = ({
   href: string;
   children: React.ReactNode;
 }) => (
-  <a
-    href={href}
-    className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
-  >
+  <a href={href} className="nav-link">
     {children}
   </a>
 );
@@ -177,11 +164,7 @@ const MobileNavLink = ({
   children: React.ReactNode;
   onClick: () => void;
 }) => (
-  <a
-    href={href}
-    onClick={onClick}
-    className="text-lg font-medium text-gray-700 hover:text-black transition-colors block py-2"
-  >
+  <a href={href} onClick={onClick} className="mobile-nav-link">
     {children}
   </a>
 );

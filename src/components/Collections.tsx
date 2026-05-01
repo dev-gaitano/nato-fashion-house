@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./Collections.css";
 
 const Collections = () => {
   const collections = [
@@ -77,38 +78,34 @@ const Collections = () => {
   };
 
   return (
-    <section
-      id="collections"
-      className="w-full pt-16 relative overflow-hidden bg-[radial-gradient(circle_at_center,_#f3e8e2_0%,_transparent_70%)]"
-    >
-      <div className="w-screen px-4 sm:px-6 lg:px-8 inset-0">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-heading mb-4">
+    <section id="collections" className="collections">
+      <div className="container">
+        <div className="collections-header">
+          <h2 className="collections-title">
             Latest Collections
           </h2>
         </div>
 
         <Slider {...settings}>
           {collections.map((collection, index) => (
-            <div key={index} className="w-full group cursor-pointer px-2">
-              <div className="w-full relative overflow-hidden">
+            <div key={index} className="collection-slide">
+              <div className="collection-image-wrapper">
                 <img
                   src={collection.image}
                   alt={collection.title}
-                  className="w-full h-144 object-cover transform group-hover:scale-105 transition-transform duration-300 object-top"
+                  className="collection-image"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-0 transition-opacity"></div>
+                <div className="collection-overlay"></div>
               </div>
-              <div className="mt-4 text-center">
-                <p className="text-primary">{collection.collection}</p>
-                <h3 className="text-xl mb-2">{collection.title}</h3>
-                {/* <p className="text-gray-600">{collection.price}</p> */}
+              <div className="collection-content">
+                <p className="collection-category">{collection.collection}</p>
+                <h3 className="collection-item-title">{collection.title}</h3>
               </div>
             </div>
           ))}
         </Slider>
-        <div className="text-center mb-8">
-          <button className="border border-primary text-primary text-xs px-6 py-3 mt-4 transition-all ease-out duration-500 hover:border-gray-600 hover:text-gray-600 hover:px-3 hover:py-2">
+        <div className="collections-cta-container">
+          <button className="collections-cta-btn">
             SHOP MORE
           </button>
         </div>

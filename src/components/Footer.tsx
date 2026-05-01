@@ -1,6 +1,7 @@
 import { Instagram, Twitter, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import "./Footer.css";
 
 const Footer = () => {
   const partners = [
@@ -34,33 +35,21 @@ const Footer = () => {
     },
   ];
 
-  const Dropdown = ({ title, links }) => {
+  const Dropdown = ({ title, links }: { title: string; links: { label: string; href: string }[] }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-      <div className="md:hidden flex flex-col w-full">
+      <div className="footer-dropdown">
         {/* Title + Arrow Toggle */}
-        <div
-          className="flex items-center justify-between cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <h3
-            className={`font-bold transition-all duration-500 ${isOpen ? "text-gray-300" : "text-gray-600"
-              }`}
-          >
+        <div className="footer-dropdown-header" onClick={() => setIsOpen(!isOpen)}>
+          <h3 className={`footer-dropdown-title ${isOpen ? "open" : "closed"}`}>
             {title}
           </h3>
-          <FaChevronDown
-            className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"
-              }`}
-          />
+          <FaChevronDown className={`footer-dropdown-icon ${isOpen ? "open" : ""}`} />
         </div>
 
         {/* Links */}
-        <div
-          className={`flex flex-col gold-gradient overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-            } md:max-h-none md:opacity-100`}
-        >
+        <div className={`footer-dropdown-content gold-gradient ${isOpen ? "open" : "closed"}`}>
           {links.map((link, index) => (
             <a key={index} href={link.href}>
               {link.label}
@@ -72,15 +61,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-16 max-md:py-8">
-      <div className="container mx-auto px-4 flex flex-col items-start mb-8 text-base">
-        <div className="w-full flex max-md:flex-col">
-          <div className="flex flex-col gap-4 md:w-1/2">
+    <footer className="footer">
+      <div className="container footer-container">
+        <div className="footer-main">
+          <div className="footer-left">
             {/* Desktop Only Sections */}
-            <div className="flex max-md:flex-col">
-              <div className="max-md:hidden flex flex-col w-1/2">
-                <h3 className="font-bold text-gray-600">NEED ANY HELP?</h3>
-                <div className="flex flex-col gold-gradient">
+            <div className="footer-desktop-links">
+              <div className="footer-link-group">
+                <h3 className="footer-heading">NEED ANY HELP?</h3>
+                <div className="footer-link-list gold-gradient">
                   <a href="#">Contact Us</a>
                   <a href="#">My Order</a>
                   <a href="#">FAQs</a>
@@ -89,9 +78,9 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="max-md:hidden flex flex-col w-1/2">
-                <h3 className="font-bold text-gray-600">QUICK LINKS</h3>
-                <div className="flex flex-col gold-gradient">
+              <div className="footer-link-group">
+                <h3 className="footer-heading">QUICK LINKS</h3>
+                <div className="footer-link-list gold-gradient">
                   <a href="#">Home</a>
                   <a href="#">Shop</a>
                   <a href="#">Collections</a>
@@ -104,9 +93,9 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="max-md:hidden flex flex-col">
-              <h3 className="font-bold text-gray-600">NATO SERVICES</h3>
-              <div className="flex flex-col gold-gradient">
+            <div className="footer-services-desktop">
+              <h3 className="footer-heading">NATO SERVICES</h3>
+              <div className="footer-link-list gold-gradient">
                 <a href="#">Personal Styling</a>
                 <a href="#">Celebrity Styling</a>
                 <a href="#">Corporate / Brand Consulting</a>
@@ -152,95 +141,61 @@ const Footer = () => {
               ]}
             />
           </div>
-          <div className="w-1/2 max-md:w-full">
-            <div className="my-0 max-md:my-12">
-              <h3 className="mb-6 max-md:mb-3 font-bold text-gray-600">
-                STORE LOCATION
-              </h3>
-              <input
-                type="email"
-                placeholder="Country/Region"
-                className="w-full bg-black border-b"
-              />
+          <div className="footer-right">
+            <div className="footer-form-group">
+              <h3 className="footer-heading">STORE LOCATION</h3>
+              <input type="email" placeholder="Country/Region" className="footer-input" />
             </div>
-            <div className="my-12">
-              <h3 className="mb-6 max-md:mb-3 font-bold text-gray-600">
-                SIGN UP FOR NEWSLETTER
-              </h3>
-              <p className="mb-6 gold-gradient opacity-70">
+            <div className="footer-form-group">
+              <h3 className="footer-heading">SIGN UP FOR NEWSLETTER</h3>
+              <p className="footer-newsletter-text gold-gradient">
                 By entering your email address below, you consent to receiving
                 our newsletter with access to our latest collections, events and
                 initiatives. More details on this are provided in our Privacy
                 Policy
               </p>
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full bg-black border-b"
-              />
+              <input type="email" placeholder="Email" className="footer-input" />
             </div>
             <div>
-              <h3 className="mb-6 max-md:mb-3 font-bold text-gray-600">
-                COUNTRY/REGION
-              </h3>
-              <a href="#">Kenya</a>
+              <h3 className="footer-heading">COUNTRY/REGION</h3>
+              <a href="#" className="gold-gradient">Kenya</a>
             </div>
           </div>
         </div>
-        <div className="mt-12 max-md:mt-6 mb-24 max-md:mb-12 pt-8 max-md:pt-4 text-left text-nato-400 w-full">
-          <div className="flex flex-nowrap overflow-x-auto py-4 max-md:py-2 -mx-2 items-center justify-center">
+        <div className="footer-partners">
+          <div className="footer-partners-track">
             {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="flex justify-start space-y-3 min-w-[120px] max-md:min-w-[60px]"
-              >
-                <div className="w-[80px] max-md:w-[50px] h-[50px] max-md:h-[25px] relative p-0 hover-lift flex items-center justify-start">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-w-full max-h-full object-contain filter transition-all duration-300"
-                  />
+              <div key={partner.name} className="footer-partner-item">
+                <div className="footer-partner-logo-container hover-lift">
+                  <img src={partner.logo} alt={partner.name} />
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="footer-full-logo-container">
           <img
             src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635330/nato-logo-full_moycdt.png"
             alt="logo-image"
-            className="w-[800px]"
+            className="footer-full-logo"
           />
         </div>
-        <div className="flex max-md:flex-col items-center justify-between w-full border-t border-gold-gradient mt-24 max-md:mt-12">
-          <p className="gold-gradient mt-12 max-md:mt-6 max-md:text-sm">
-            &copy; {new Date().getFullYear()} NATO Fashion House. All rights
-            reserved.
+        <div className="footer-bottom footer-bottom-border">
+          <p className="footer-copyright gold-gradient">
+            &copy; {new Date().getFullYear()} NATO Fashion House. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 mt-12 max-md:mt-6">
-            <a
-              href="#"
-              className="gold-gradient/60 hover:text-secondary transition-colors"
-            >
-              <Instagram className="w-5 max-md:w-4 h-5 max-md:h-4" />
+          <div className="footer-socials">
+            <a href="#" className="footer-social-link gold-gradient">
+              <Instagram />
             </a>
-            <a
-              href="#"
-              className="gold-gradient/60 hover:text-secondary transition-colors"
-            >
-              <Twitter className="w-5 max-md:w-4 h-5 max-md:h-4" />
+            <a href="#" className="footer-social-link gold-gradient">
+              <Twitter />
             </a>
-            <a
-              href="#"
-              className="gold-gradient/60 hover:text-secondary transition-colors"
-            >
-              <Phone className="w-5 max-md:w-4 h-5 max-md:h-4" />
+            <a href="#" className="footer-social-link gold-gradient">
+              <Phone />
             </a>
-            <a
-              href="#"
-              className="gold-gradient/60 hover:text-secondary transition-colors"
-            >
-              <Mail className="w-5 max-md:w-4 h-5 max-md:h-4" />
+            <a href="#" className="footer-social-link gold-gradient">
+              <Mail />
             </a>
           </div>
         </div>

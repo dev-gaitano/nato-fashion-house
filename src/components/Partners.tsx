@@ -1,3 +1,5 @@
+import "./Partners.css";
+
 const Partners = () => {
   const partners = [
     {
@@ -38,34 +40,24 @@ const Partners = () => {
   ];
 
   return (
-    <section id="partners" className="py-20 bg-nato-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
+    <section id="partners" className="partners">
+      <div className="container">
+        <div className="partners-container">
+          <div className="partners-header">
+            <h2 className="partners-title">
               Our <span className="gold-gradient">Partners</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="partners-description">
               Collaborating with industry leaders to create positive change
             </p>
           </div>
 
-          <div className="flex flex-nowrap overflow-x-auto gap-8 py-4 px-2 -mx-2 items-center justify-between">
+          <div className="partners-track">
             {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="flex flex-col items-center space-y-3 min-w-[120px]"
-              >
-                <div className="w-[120px] h-[80px] relative glass-card p-0 rounded-lg hover-lift flex items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-w-full max-h-full object-contain mix-blend-multiply filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
+              <div key={partner.name} className="partner-item">
+                <div className="partner-logo-wrapper glass-card hover-lift">
+                  <img src={partner.logo} alt={partner.name} />
                 </div>
-                {/* <p className="text-nato-400 text-xs text-center whitespace-nowrap">
-                  {partner.role}
-                </p> */}
               </div>
             ))}
           </div>

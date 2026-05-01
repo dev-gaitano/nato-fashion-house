@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
+import "./ImageSlider.css";
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 2 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="image-slider">
       {images.map((image, index) => (
         <img
           key={index}
           src={image}
           alt={`Slide ${index}`}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
+          className={`image-slider-img ${index === currentIndex ? "visible" : "hidden"}`}
           loading="lazy"
         />
       ))}

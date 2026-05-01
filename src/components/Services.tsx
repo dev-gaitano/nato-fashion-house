@@ -1,6 +1,4 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "./Services.css";
 
 const Services = () => {
   const services = [
@@ -56,44 +54,41 @@ const Services = () => {
   ];
 
   return (
-    <section
-      id="services"
-      className="py-20 relative overflow-hidden bg-[radial-gradient(circle_at_center,_#f3e8e2_0%,_transparent_70%)]"
-    >
-      <div className="container px-4 sm:px-6 lg:px-8 inset-0 ">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
+    <section id="services" className="services">
+      <div className="container">
+        <div className="services-header">
+          <h2 className="services-title">
             Nato <span className="gold-gradient">Services</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="services-description">
             Discover our latest services that blend traditional African
             craftsmanship with contemporary design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative overflow-hidden">
+            <div key={index} className="service-card">
+              <div className="service-image-wrapper">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300 object-top"
+                  className="service-image"
                 />
-                <div className="absolute inset-0 group-hover:bg-opacity-30 transition-opacity"></div>
+                <div className="service-overlay"></div>
               </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-                <button className="border-b gold-gradient text-gold-gradient text-xs font-black px-6 py-3 mt-4 mb-6 transition-all ease-out duration-500 hover:border-gray-600 hover:text-gray-600 hover:px-2">
+              <div className="service-content">
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-description">{service.description}</p>
+                <button className="service-cta-btn gold-gradient">
                   {service.cta}
                 </button>
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-center items-center mt-6">
-          <button className="border gold-gradient text-gold-gradient text-xs font-black px-6 py-3 mt-4 transition-all ease-out duration-500 hover:border-gray-600 hover:text-gray-600 hover:px-3 hover:py-2">
+        <div className="services-discover-btn-container">
+          <button className="services-discover-btn gold-gradient">
             DISCOVER MORE
           </button>
         </div>

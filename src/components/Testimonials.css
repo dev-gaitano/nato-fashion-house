@@ -1,0 +1,95 @@
+.testimonials {
+  padding: 5rem 0;
+  background-color: var(--nato-50);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonials-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-title {
+    font-size: 2.25rem; /* text-4xl */
+  }
+}
+
+.testimonials-description {
+  color: #4b5563;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 72rem; /* max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial-card {
+  padding: 2rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  position: relative;
+}
+
+/* glass-card and hover-lift are in App.css */
+
+.testimonial-quote-icon {
+  color: var(--nato-300);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-star {
+  fill: var(--nato-400);
+  color: var(--nato-400);
+}
+
+.testimonial-text {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-name {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.125rem; /* text-lg */
+  margin: 0;
+}
+
+.testimonial-role {
+  color: var(--nato-400);
+  font-size: 0.875rem; /* text-sm */
+  margin: 0;
+}

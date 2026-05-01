@@ -1,0 +1,137 @@
+.services {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #f3e8e2 0%, transparent 70%);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .services-title {
+    font-size: 2.25rem; /* text-4xl */
+  }
+}
+
+.services-description {
+  color: #4b5563; /* text-gray-600 */
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  cursor: pointer;
+}
+
+.service-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 24rem; /* h-96 */
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.3s;
+}
+
+/* Replicating group-hover:bg-opacity-30 */
+.service-card:hover .service-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.service-content {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.service-card-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service-card-description {
+  color: #4b5563;
+}
+
+.service-cta-btn {
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: none;
+  font-size: var(--font-xxs);
+  font-weight: 900;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.service-cta-btn:hover {
+  border-bottom-color: #4b5563;
+  color: #4b5563 !important; /* Overriding gold-gradient if needed */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.services-discover-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.services-discover-btn {
+  border: 1px solid transparent; /* Will be gold-gradient border-image if possible, otherwise fixed */
+  border-color: hsl(var(--border)); /* Fallback */
+  background: none;
+  font-size: var(--font-xxs);
+  font-weight: 900;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.services-discover-btn:hover {
+  border-color: #4b5563;
+  color: #4b5563 !important;
+  padding: 0.5rem 0.75rem;
+}

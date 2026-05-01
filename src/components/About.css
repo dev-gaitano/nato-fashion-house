@@ -1,0 +1,124 @@
+.about {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.about-bg-container {
+  position: relative;
+}
+
+.about-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 767px) {
+  .about-bg-image {
+    height: 52rem;
+  }
+}
+
+.about-content {
+  position: absolute;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    bottom: 8rem; /* bottom-32 */
+    left: 15rem; /* left-60 */
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1023px) {
+  .about-content {
+    left: 2.5rem; /* left-10 */
+  }
+}
+
+@media (max-width: 767px) {
+  .about-content {
+    top: 2.5rem; /* top-10 */
+    left: 2.5rem;
+  }
+}
+
+.about-text {
+  width: 33.75rem; /* 540px */
+  font-size: 1.25rem; /* text-xl */
+}
+
+@media (max-width: 767px) {
+  .about-text {
+    width: 18.125rem; /* 290px */
+    font-size: 0.75rem; /* text-xs */
+  }
+}
+
+.about-dropcap {
+  display: inline;
+  font-size: 4.5rem; /* text-7xl */
+  float: left;
+  margin-right: 0.25rem;
+  font-family: var(--font-other);
+}
+
+@media (max-width: 767px) {
+  .about-dropcap {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+.about-text-extra {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .about-text-extra {
+    display: none;
+  }
+}
+
+.about-author {
+  color: hsl(var(--primary));
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .about-author {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+.about-cta-btn {
+  border: 1px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+  font-size: 0.75rem; /* text-xs */
+  background: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .about-cta-btn {
+    font-size: var(--font-xxs);
+    margin-top: 1rem;
+  }
+}
+
+.about-cta-btn:hover {
+  border-color: #4b5563;
+  color: #4b5563;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

@@ -5,14 +5,15 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 import NewsBar from "@/components/NewsBar";
 import { useState, useEffect } from "react";
+import "./Index.css";
 
 const Index = () => {
   useEffect(() => {
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-in", "opacity-100");
-          entry.target.classList.remove("opacity-0", "translate-y-8");
+          entry.target.classList.add("animate-fade-in");
+          entry.target.classList.remove("section-hidden");
         }
       });
     };
@@ -27,12 +28,7 @@ const Index = () => {
     );
     // Observe all sections except Hero (which should always be visible)
     document.querySelectorAll("section:not(#hero)").forEach((section) => {
-      section.classList.add(
-        "opacity-0",
-        "translate-y-8",
-        "transition-all",
-        "duration-700"
-      );
+      section.classList.add("section-hidden");
       observer.observe(section);
     });
     return () => observer.disconnect();
@@ -49,8 +45,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="flex flex-col">
+    <div className="index-page">
+      <div className="index-header">
         {isScrolled ? (
           <>
             <NewsBar />

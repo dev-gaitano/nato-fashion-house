@@ -1,0 +1,20 @@
+.index-page {
+  min-height: 100vh;
+}
+
+.index-header {
+  display: flex;
+  flex-direction: column;
+}
+
+/* For intersection observer animations */
+.animate-fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(2rem); /* translate-y-8 */
+  transition: all 0.7s;
+}

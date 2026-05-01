@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart, Leaf, Users, Globe } from "lucide-react";
+import "./Values.css";
 
 const Values = () => {
   const values = [
@@ -27,26 +28,26 @@ const Values = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-4">
+    <section className="values">
+      <div className="container">
+        <div className="values-header">
+          <h2 className="values-title">
             Our <span className="gold-gradient">Values</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="values-description">
             At NATO Fashion House, we believe in creating fashion that makes a
             difference. Our values guide everything we do.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="values-grid">
           {values.map((value, index) => (
-            <div key={index} className="text-center p-6">
-              <div className="inline-block p-3 bg-neutral-100 rounded-full mb-4">
+            <div key={index} className="value-card">
+              <div className="value-icon-wrapper">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <h3 className="value-title">{value.title}</h3>
+              <p className="value-description">{value.description}</p>
             </div>
           ))}
         </div>
