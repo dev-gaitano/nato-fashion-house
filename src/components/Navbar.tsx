@@ -16,11 +16,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm mt-8"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-white/80 backdrop-blur-md shadow-sm mt-8"
+        : "bg-transparent"
+        }`}
     >
       <div className="container px-4">
         <div className="flex items-center justify-center h-16">
@@ -57,13 +56,12 @@ const Navbar = () => {
 
           <a href="/" className="flex w-[450px]">
             <img
-              src="https://www.aulgahnato.com/wp-content/uploads/2021/01/nato-logo.png"
+              src="https://res.cloudinary.com/diwkfbsgv/image/upload/v1777635330/nato-logo-full_moycdt.png"
               alt="logo-image"
-              className={`w-24 transition-all justify-center duration-500 ease-in-out ${
-                isScrolled
-                  ? "md:scale-100 translate-y-0 max-md:justify-start mx-auto max-md:mx-2 "
-                  : "translate-y-96 max-md:translate-y-40 scale-[8] max-md:scale-[3] max-md:translate-x-[6rem] mx-auto"
-              }`}
+              className={`w-24 transition-all justify-center duration-500 ease-in-out ${isScrolled
+                ? "md:scale-100 translate-y-0 max-md:justify-start mx-auto max-md:mx-2 "
+                : "translate-y-96 max-md:translate-y-40 scale-[8] max-md:scale-[3] max-md:translate-x-[6rem] mx-auto"
+                }`}
             />
           </a>
 
